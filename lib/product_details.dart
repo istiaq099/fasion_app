@@ -34,13 +34,14 @@ class ProductDetails extends StatelessWidget {
             height: 10,
             width: 40,
             decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.black12,
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.black12,
+            ),
+            child: const Icon(
+              Icons.favorite,
+              color: Colors.black,
+            ),
           ),
-              child: Icon(
-            Icons.favorite,
-            color: Colors.black,
-          ))
         ],
       ),
     );
