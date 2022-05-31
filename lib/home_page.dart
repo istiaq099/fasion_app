@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
                               borderSide:
                                   BorderSide(width: 5, color: Colors.red),
                               borderRadius: BorderRadius.all(
-                                Radius.circular(20),
+                                Radius.circular(10),
                               ),
                             ),
                           ),
@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
                         height: 50,
                         width: 50,
                         decoration: const BoxDecoration(
-                          color: Colors.amber,
+                          color: Colors.black12,
                           borderRadius: BorderRadius.all(
                             Radius.circular(10),
                           ),
@@ -55,87 +55,95 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  Image.network(
-                    "https://images.pexels.com/photos/331990/pexels-photo-331990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    fit: BoxFit.cover,
+                  Container(
                     height: 200,
-                    width: 550,
+                    width: 500,
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                            "https://images.pexels.com/photos/331990/pexels-photo-331990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          TextButton(
-                            style: TextButton.styleFrom(
-                              primary: Colors.black,
-                              side: const BorderSide(color: Colors.black26),
-                            ),
-                            onPressed: () {},
-                            child: const Text("Recommended"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            primary: Colors.black,
+                            side: const BorderSide(color: Colors.black26),
                           ),
-                          const SizedBox(
-                            width: 10,
+                          onPressed: () {},
+                          child: const Text("Recommended"),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            primary: Colors.black,
+                            side: const BorderSide(color: Colors.black26),
                           ),
-                          TextButton(
-                            style: TextButton.styleFrom(
-                              primary: Colors.black,
-                              side: const BorderSide(color: Colors.black26),
-                            ),
-                            onPressed: () {},
-                            child: const Text("Panjabi"),
+                          onPressed: () {},
+                          child: const Text("Panjabi"),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            primary: Colors.black,
+                            side: const BorderSide(color: Colors.black26),
                           ),
-                          const SizedBox(
-                            width: 10,
+                          onPressed: () {},
+                          child: const Text("Shirt"),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            primary: Colors.black,
+                            side: const BorderSide(color: Colors.black26),
                           ),
-                          TextButton(
-                            style: TextButton.styleFrom(
-                              primary: Colors.black,
-                              side: const BorderSide(color: Colors.black26),
-                            ),
-                            onPressed: () {},
-                            child: const Text("Shirt"),
+                          onPressed: () {},
+                          child: const Text("Saree"),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            primary: Colors.black,
+                            side: const BorderSide(color: Colors.black26),
                           ),
-                          const SizedBox(
-                            width: 10,
+                          onPressed: () {},
+                          child: const Text("Burkha"),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                            primary: Colors.black,
+                            side: const BorderSide(color: Colors.black26),
                           ),
-                          TextButton(
-                            style: TextButton.styleFrom(
-                              primary: Colors.black,
-                              side: const BorderSide(color: Colors.black26),
-                            ),
-                            onPressed: () {},
-                            child: const Text("Saree"),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          TextButton(
-                            style: TextButton.styleFrom(
-                              primary: Colors.black,
-                              side: const BorderSide(color: Colors.black26),
-                            ),
-                            onPressed: () {},
-                            child: const Text("Burkha"),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          TextButton(
-                            style: TextButton.styleFrom(
-                              primary: Colors.black,
-                              side: const BorderSide(color: Colors.black26),
-                            ),
-                            onPressed: () {},
-                            child: const Text("Pant"),
-                          ),
-                        ],
-                      ),
+                          onPressed: () {},
+                          child: const Text("Pant"),
+                        ),
+                      ],
                     ),
                   ),
                   const SizedBox(
@@ -155,10 +163,12 @@ class HomePage extends StatelessWidget {
                           );
                         },
                         child: Container(
-                          height: 250,
+                          height: 240,
                           width: 170,
                           decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(15)),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
                             image: DecorationImage(
                               fit: BoxFit.cover,
                               image: NetworkImage(
@@ -174,6 +184,39 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.favorite,
+              color: Colors.black,
+            ),
+            label: 'Favorite',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shop,
+              color: Colors.black,
+            ),
+            label: 'Shop',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person,
+              color: Colors.black,
+            ),
+            label: 'Person',
+          ),
+        ],
       ),
     );
   }

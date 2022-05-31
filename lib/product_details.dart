@@ -1,3 +1,4 @@
+import 'package:fasion_app/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -18,47 +19,9 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        toolbarHeight: 100,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
-        ),
-        title: SizedBox(
-          height: 100,
-          width: 320,
-          child: Row(
-            children: [
-              const SizedBox(
-                width: 50,
-              ),
-              const Text(
-                "Product Details",
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
-              const SizedBox(
-                width: 68,
-              ),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.favorite,
-                    color: Colors.black,
-                  ))
-            ],
-          ),
-        ),
-      ),
+      appBar: const CustomAppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SizedBox(
           height: double.infinity,
           width: double.infinity,
@@ -67,6 +30,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(height: 20,),
                 SizedBox(
                   height: 300,
                   child: PageView.builder(
@@ -128,7 +92,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  const Text(
+                                  Text(
                                     "\$243.00",
                                     style: TextStyle(
                                       fontSize: 30,
@@ -269,8 +233,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
+                    
                   ],
                 ),
+                SizedBox(height: 20,),
               ],
             ),
           ),
