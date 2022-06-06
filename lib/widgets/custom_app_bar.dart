@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../home/home_page.dart';
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
@@ -26,7 +28,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                    ),
+                  );
+                },
                 icon: const Icon(
                   Icons.arrow_back_ios,
                   size: 18,

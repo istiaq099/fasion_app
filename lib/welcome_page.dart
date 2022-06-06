@@ -1,4 +1,4 @@
-import 'package:fasion_app/home_page.dart';
+import 'package:fasion_app/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {

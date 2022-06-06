@@ -30,7 +30,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 SizedBox(
                   height: 300,
                   child: PageView.builder(
@@ -92,7 +92,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Text(
+                                  const Text(
                                     "\$243.00",
                                     style: TextStyle(
                                       fontSize: 30,

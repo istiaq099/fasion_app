@@ -1,4 +1,5 @@
-import 'package:fasion_app/product_details.dart';
+import 'package:fasion_app/home/home_image.dart';
+import 'package:fasion_app/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,14 +21,23 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       const SizedBox(
-                        width: 300,
+                        width: 320,
                         child: TextField(
                           decoration: InputDecoration(
+                            contentPadding: EdgeInsets.zero,
                             prefixIcon: Icon(Icons.search),
                             hintText: "Search your product here",
-                            border: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(width: 5, color: Colors.red),
+                            enabled: true,
+                            fillColor: Colors.black12,
+                            filled: true,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide.none,
                               borderRadius: BorderRadius.all(
                                 Radius.circular(10),
                               ),
@@ -36,8 +46,8 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        height: 50,
-                        width: 50,
+                        height: 45,
+                        width: 45,
                         decoration: const BoxDecoration(
                           color: Colors.black12,
                           borderRadius: BorderRadius.all(
@@ -45,7 +55,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         child: IconButton(
-                          iconSize: 25,
+                          iconSize: 20,
                           color: Colors.black54,
                           onPressed: () {},
                           icon: const Icon(
@@ -149,36 +159,7 @@ class HomePage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      InkWell(
-                        splashColor: Colors.amber,
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: ((context) => const ProductDetails()),
-                            ),
-                          );
-                        },
-                        child: Container(
-                          height: 240,
-                          width: 170,
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  "https://images.pexels.com/photos/1375849/pexels-photo-1375849.jpeg?auto=compress&cs=tinysrgb&w=600"),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
+                  const HomeImage(),
                 ],
               ),
             ),
@@ -187,32 +168,51 @@ class HomePage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.black,
+            icon: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
             ),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite,
-              color: Colors.black,
+            icon: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.favorite,
+                color: Colors.black,
+              ),
             ),
             label: 'Favorite',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.shop,
-              color: Colors.black,
+            icon: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.shop_2,
+                color: Colors.black,
+              ),
             ),
             label: 'Shop',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: Colors.black,
+            icon: IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProfilePage(),
+                  ),
+                );
+              },
+              icon: const Icon(
+                Icons.person,
+                color: Colors.black,
+              ),
             ),
             label: 'Person',
           ),
